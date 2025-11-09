@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Mi página de amor 💜{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    nav {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 12px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      margin: 10px auto;
+      max-width: 700px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #7c3aed;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      background: #f3e8ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="{{ url_for('index') }}">Inicio</a>
+    <a href="{{ url_for('carta') }}">Carta</a>
+    <a href="{{ url_for('galeria') }}">Galería</a>
+    <a href="{{ url_for('juego') }}">Juego</a>
+    <a href="{{ url_for('sorpresa') }}">Sorpresa</a>
+    <a href="{{ url_for('gatitos') }}">🐱 Gatitos</a>
+    <a href="{{ url_for('musica') }}">🎵 Música</a>
+  </nav>
+
+  {% block content %}{% endblock %}
+</body>
+</html>

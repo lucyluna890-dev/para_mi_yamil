@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}🎵 Canciones favoritas 💜{% endblock %}
+
+{% block content %}
+<section class="musica">
+  <h2>🎶 Nuestras canciones favoritas 🎶</h2>
+  <p class="texto">
+    Estas canciones siempre me recordarán a ti.  
+    Porque cada letra, cada nota y cada ritmo tienen un pedacito de nosotros 💞
+  </p>
+
+  <div class="lista-canciones">
+    <div class="cancion">
+      <img src="{{ url_for('static', filename='img/mil_horas.jpg') }}" alt="Mil Horas">
+      <h3>🎧 Mil Horas – Los Abuelos de la Nada</h3>
+    <a class="btn" href="https://open.spotify.com/track/6ySWtyMprBb1YX8WAAuFBs" target="_blank">
+        💚 Escuchar en Spotify
+      </a>
+    </div>
+
+    <div class="cancion">
+      <img src="{{ url_for('static', filename='img/lamento_boliviano.jpg') }}" alt="Lamento Boliviano">
+      <h3>🎸 Lamento Boliviano – Enanitos Verdes</h3>
+      <a class="btn" href="https://open.spotify.com/track/6Pur3hWy6Nzc27ilmsp5HA" target="_blank">
+        💚 Escuchar en Spotify
+      </a>
+    </div>
+
+    <div class="cancion">
+      <img src="{{ url_for('static', filename='img/frances_limon.jpg') }}" alt="Frances Limón">
+      <h3>💫 Frances Limón – Los Mesoneros</h3>
+      <a class="btn" href="https://open.spotify.com/track/2BPmAFsiy6vwDceybqIAjw" target="_blank">>
+        💚 Escuchar en Spotify
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .musica {
+    padding: 30px 18px;
+    text-align: center;
+  }
+  .texto {
+    color: #4b006e;
+    max-width: 750px;
+    margin: 0 auto 25px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .lista-canciones {
+    display: grid;
+    gap: 26px;
+    max-width: 900px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .cancion {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cancion:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+  }
+  .cancion img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .cancion h3 {
+    color: #6d28d9;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#8b5cf6,#ec4899);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139,92,246,0.25);
+  }
+</style>
+{% endblock %}

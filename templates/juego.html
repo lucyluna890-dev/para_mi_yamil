@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Juego del Amor 💞{% endblock %}
+
+{% block content %}
+<h2>💖 Juego del Amor 💖</h2>
+<p>¿Cuál es mi color favorito?</p>
+
+<button class="btn" onclick="respuesta(true)">💜 Morado</button>
+<button class="btn" onclick="respuesta(false)">💚 Verde</button>
+
+<p id="resultado"></p>
+
+<script>
+  function respuesta(correcta){
+    const r = document.getElementById('resultado');
+    if(correcta){
+      r.innerHTML = "¡Adivinaste! Eres mi amorcito 💘";
+    } else {
+      r.innerHTML = "Ups 😅 intenta otra vez 💞";
+    }
+  }
+</script>
+{% endblock %}

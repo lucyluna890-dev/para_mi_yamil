@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}🐱 Gatitos tiernos 💖{% endblock %}
+
+{% block content %}
+<h2>🐾 Galería de Gatitos 🐾</h2>
+<p class="texto">Porque todo amor necesita un poco de ternura felina 😻</p>
+
+<div id="gatos" class="galeria-gatos"></div>
+<button class="btn btn-gato" onclick="mostrarGatos()">💜 Ver más gatitos 💜</button>
+
+<style>
+  .galeria-gatos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+    padding: 20px;
+  }
+  .gato {
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .gato img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .gato:hover { transform: scale(1.05); }
+</style>
+
+<script>
+  const gatos = [
+    "{{ url_for('static', filename='gatos/gato1.jpg') }}",
+    "{{ url_for('static', filename='gatos/gato2.jpg') }}",
+    "{{ url_for('static', filename='gatos/gato3.jpg') }}",
+    "{{ url_for('static', filename='gatos/gato4.jpg') }}",
+    "{{ url_for('static', filename='gatos/gato5.jpg') }}",
+    "{{ url_for('static', filename='gatos/gato6.jpg') }}"
+  ];
+  function mostrarGatos(){
+    const contenedor = document.getElementById("gatos");
+    contenedor.innerHTML = "";
+    for (let i = 0; i < 4; i++) {
+      const random = gatos[Math.floor(Math.random()*gatos.length)];
+      const div = document.createElement("div");
+      div.className = "gato";
+      div.innerHTML = `<img src="${random}" alt="gatito adorable">`;
+      contenedor.appendChild(div);
+    }
+  }
+  mostrarGatos();
+</script>
+{% endblock %}

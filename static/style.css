@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fbcfe8, #c4b5fd);
+  color: #4b006e;
+  text-align: center;
+  animation: fondo 8s infinite alternate;
+}
+
+@keyframes fondo {
+  from { background: linear-gradient(135deg, #fbcfe8, #c4b5fd); }
+  to { background: linear-gradient(135deg, #d8b4fe, #f9a8d4); }
+}
+
+h1, h2 {
+  color: #6d28d9;
+  text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+}
+
+.btn {
+  background: linear-gradient(90deg, #c084fc, #f472b6);
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover { transform: translateY(-3px); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+
+.foto {
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.foto:hover { transform: scale(1.05); }
+
+.corazon {
+  font-size: 4rem;
+  cursor: pointer;
+  animation: latir 1s infinite;
+}
+@keyframes latir {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}

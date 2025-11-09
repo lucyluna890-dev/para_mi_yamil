@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Sorpresa 💝{% endblock %}
+
+{% block content %}
+<h2>💝 Sorpresa 💝</h2>
+<p>Haz clic en el corazón para ver tu mensaje ✨</p>
+
+<div class="corazon" onclick="mostrar()">💗</div>
+<p id="mensaje"></p>
+
+<script>
+  function mostrar(){
+    document.getElementById('mensaje').innerHTML = 
+      "Gracias por ser parte de mi mundo 💞<br>— Hecho con amor por Luna💜";
+  }
+</script>
+{% endblock %}
